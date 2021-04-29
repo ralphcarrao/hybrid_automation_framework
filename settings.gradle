@@ -1,0 +1,13 @@
+rootProject.name = 'ataf'
+include 'api'
+include 'projects:cloudbacko'
+findProject(':projects:cloudbacko')?.name = 'cloudbacko'
+include 'projects:cbs'
+findProject(':projects:cbs')?.name = 'cbs'
+include 'projects:kinboy'
+findProject(':projects:kinboy')?.name = 'kinboy'
+include 'projects:cbk'
+findProject(':projects:cbk')?.name = 'cbk'
+include 'projects:cbkpro'
+findProject(':projects:cbkpro')?.name = 'cbkpro'
+

@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'commons-io:commons-io:2.0.1'
+        implementation 'io.appium:java-client:7.4.1'
+        implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+        implementation 'com.sikulix:sikulixapi:2.0.5'
+        implementation 'org.json:json:20201115'
+        implementation 'junit:junit:4.12'
+        implementation 'com.google.guava:guava:30.0-jre'
+        implementation 'tech.grasshopper:extentreports-cucumber6-adapter:2.8.0'
+        testImplementation 'io.cucumber:cucumber-java:6.8.1'
+        testImplementation 'io.cucumber:cucumber-junit:6.8.1'
+        testImplementation 'io.cucumber:cucumber-picocontainer:6.8.1'
+        if (project.name != 'api') {
+            implementation project(":api")
+        }
+    }
+}
